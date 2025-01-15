@@ -9,7 +9,7 @@ Based from the Basic and 7 Utilities Commands.
 
 To Evaluate with your Client Side Executor, Follow the steps:
 1. Ensure you have executor client side for localscript.
-2. Inject your Roblxo Game.
+2. Inject your Roblox Game.
 3. Use the Example Usage:
 ```lua
 loadstring(`https://raw.githubusercontent.com/SkunkPlatform-Team/ClientCommands/refs/heads/main/Main.txt`)
