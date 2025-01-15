@@ -42,7 +42,7 @@ local function executeFlyCommand()
     print("Fly loading...")
     game:GetService("StarterGui"):SetCore("SendNotification", {
         Title = "Executing loadstring...",
-        Text = "This Command may take a bit few. (0.91/3.11 seconds)",
+        Text = "This Command may take a bit few. (0.91 to 3.11 seconds)",
         Duration = 5,
     })
     loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
@@ -52,10 +52,10 @@ local function xray()
     print("SkunkPlatform's Highlight Players loading...")
     game:GetService("StarterGui"):SetCore("SendNotification", {
         Title = "Executing loadstring...",
-        Text = "This Command is loading the skunkplatform's highlight players... (0.91/1.50 seconds)",
+        Text = "This Command is loading the skunkplatform's highlight players... (0.91 to 1.50 seconds)",
         Duration = 5,
     })
-    loadstring(game:HttpGet("https://skunkplatform.netlify.app/api/roblox/HighlightPlayers.txt"))()
+    loadstring(game:HttpGet("https://skunkplatform.netlify.app/api/roblox/HighlightPlayers.lua"))()
 end
 
 local function sendHelpMessage()
