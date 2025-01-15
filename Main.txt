@@ -1,5 +1,43 @@
 print("[Client Commands]: © 2025 SkunkPlatform Team. All Rights Reserved.")
 
+local function freezeCharacter()
+    local character = game.Players.LocalPlayer.Character
+    local humanoidRootPart = character and character:FindFirstChild("HumanoidRootPart")
+    if humanoidRootPart then
+        humanoidRootPart.Anchored = true
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "Command Executed",
+            Text = "Your character is now frozen.",
+            Duration = 5,
+        })
+    else
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "Error",
+            Text = "HumanoidRootPart not found.",
+            Duration = 5,
+        })
+    end
+end
+
+local function unfreezeCharacter()
+    local character = game.Players.LocalPlayer.Character
+    local humanoidRootPart = character and character:FindFirstChild("HumanoidRootPart")
+    if humanoidRootPart then
+        humanoidRootPart.Anchored = false
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "Command Executed",
+            Text = "Your character is now unfrozen.",
+            Duration = 5,
+        })
+    else
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "Error",
+            Text = "HumanoidRootPart not found.",
+            Duration = 5,
+        })
+    end
+end
+
 local function executeFlyCommand()
     print("Fly loading...")
     game:GetService("StarterGui"):SetCore("SendNotification", {
@@ -81,6 +119,10 @@ game.Players.LocalPlayer.Chatted:connect(function(message)
         xray() -- Callback SkunkPlatform's HighlightPlayers
     elseif message == ".help" then
         sendHelpMessage()  -- Display help message when .help is typed
+    elseif message == ".freeze" then
+        freezeCharacter()
+    elseif message == ".unfreeze" then
+        unfreezeCharacter()
     end
 end)
 
