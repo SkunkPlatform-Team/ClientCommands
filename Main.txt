@@ -1,0 +1,86 @@
+local function executeFlyCommand()
+    print("Fly loading...")
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = "Executing loadstring...",
+        Text = "This Command may take a bit few. (0.91/3.11 seconds)",
+        Duration = 5,
+    })
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
+end
+
+local function xray()
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = "Executing loadstring...",
+        Text = "This Command is loading the skunkplatform's highlight players... (0.91/1.50 seconds)",
+        Duration = 5,
+    })
+    loadstring(game:HttpGet("https://skunkplatform.netlify.app/api/roblox/HighlightPlayers.txt"))()
+end
+
+local function sendHelpMessage()
+    -- Send a notification with help commands
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = "Available Commands",
+        Text = ".fly - Enable flying\n.runner-enable - Enable running fast\n.runner-disable - Disable running fast\n.highjump-enable - Enable high jumps\n.highjump-disable - Disable high jumps\n.disconnect - Disconnect the player",
+        Duration = 10,
+    })
+end
+
+print("Chatted has been added to onchat.")
+
+-- Bind the function to a command or key
+game.Players.LocalPlayer.Chatted:connect(function(message)
+    local character = game.Players.LocalPlayer.Character
+    local humanoid = character and character:FindFirstChild("Humanoid")
+    
+    if message == ".fly" then
+        executeFlyCommand()
+    elseif message == ".runner-enable" then
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "Command Executed",
+            Text = "You've applied to the 50.",
+            Duration = 5,
+        })
+        if humanoid then
+            humanoid.WalkSpeed = 50
+        end
+    elseif message == ".runner-disable" then
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "Command Executed",
+            Text = "You've applied to the Default.",
+            Duration = 5,
+        })
+        if humanoid then
+            humanoid.WalkSpeed = 16
+        end
+    elseif message == ".highjump-enable" then
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "Command Executed",
+            Text = "You've applied to the 125.",
+            Duration = 5,
+        })
+        if humanoid then
+            humanoid.JumpPower = 125
+        end
+    elseif message == ".highjump-disable" then
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "Command Executed",
+            Text = "You've applied to the Default.",
+            Duration = 5,
+        })
+        if humanoid then
+            humanoid.JumpPower = 50
+        end
+    elseif message == ".disconnect" then
+        game.Players.LocalPlayer:Kick("You've Disconnected due to chatting with '.disconnect'")
+    elseif message == ".help" then
+        sendHelpMessage()  -- Display help message when .help is typed
+    end
+end)
+
+-- Display notification on script start (client side)
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "Client Commands",
+    Text = "Type '.help' to show more commands.",
+    Duration = 5,
+})
