@@ -12,8 +12,13 @@ To Evaluate with your Client Side Executor, Follow the steps:
 2. Inject your Roblox Game.
 3. Use the Example Usage:
 ```lua
-loadstring(`https://raw.githubusercontent.com/SkunkPlatform-Team/ClientCommands/refs/heads/main/Main.txt`)
--- Remember to use your Executor Client Side.
+local success, result = pcall(function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/SkunkPlatform-Team/ClientCommands/refs/heads/main/Main.txt"))()
+end)
+
+if not success then
+    warn("Error loading script: " .. result)
+end
 ```
 4. Inject the Roblox Game to read example.
 5. Execute your Client Side Executor.
