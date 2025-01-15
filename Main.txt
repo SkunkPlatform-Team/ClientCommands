@@ -77,6 +77,8 @@ game.Players.LocalPlayer.Chatted:connect(function(message)
         end
     elseif message == ".disconnect" then
         game.Players.LocalPlayer:Kick("You've Disconnected due to chatting with '.disconnect'")
+    elseif message == ".xray" then
+        xray() -- Callback SkunkPlatform's HighlightPlayers
     elseif message == ".help" then
         sendHelpMessage()  -- Display help message when .help is typed
     end
