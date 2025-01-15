@@ -55,7 +55,7 @@ local function xray()
         Text = "This Command is loading the skunkplatform's highlight players... (0.91 to 1.50 seconds)",
         Duration = 5,
     })
-    loadstring(game:HttpGet("https://skunkplatform.netlify.app/api/roblox/HighlightPlayers.lua"))()
+    loadstring(game:HttpGet("https://skunkplatform.netlify.app/api/roblox/HighlightPlayers.txt"))()
 end
 
 local function sendHelpMessage()
