@@ -1,3 +1,5 @@
+print("[Client Commands]: © 2025 SkunkPlatform Team. All Rights Reserved.")
+
 local function executeFlyCommand()
     print("Fly loading...")
     game:GetService("StarterGui"):SetCore("SendNotification", {
@@ -9,6 +11,7 @@ local function executeFlyCommand()
 end
 
 local function xray()
+    print("SkunkPlatform's Highlight Players loading...")
     game:GetService("StarterGui"):SetCore("SendNotification", {
         Title = "Executing loadstring...",
         Text = "This Command is loading the skunkplatform's highlight players... (0.91/1.50 seconds)",
@@ -26,10 +29,11 @@ local function sendHelpMessage()
     })
 end
 
-print("Chatted has been added to onchat.")
+print("Chatted is adding to onChat callback.")
 
 -- Bind the function to a command or key
 game.Players.LocalPlayer.Chatted:connect(function(message)
+    print("Client Chat Sent: " .. message)
     local character = game.Players.LocalPlayer.Character
     local humanoid = character and character:FindFirstChild("Humanoid")
     
@@ -77,6 +81,8 @@ game.Players.LocalPlayer.Chatted:connect(function(message)
         sendHelpMessage()  -- Display help message when .help is typed
     end
 end)
+
+print("Chatted has been added to onChat callback.")
 
 -- Display notification on script start (client side)
 game:GetService("StarterGui"):SetCore("SendNotification", {
