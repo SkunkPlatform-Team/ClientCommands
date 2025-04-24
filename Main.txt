@@ -1,4 +1,5 @@
 print("[Client Commands]: © 2025 SkunkPlatform Team. All Rights Reserved.")
+print("[Client Commands]: Commands will display with '.help'.")
 
 local function freezeCharacter()
     local character = game.Players.LocalPlayer.Character
