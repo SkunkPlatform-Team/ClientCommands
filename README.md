@@ -14,7 +14,7 @@ To Evaluate with your Client Side Executor, Follow the steps:
 ```lua
 print()
 local success, result = pcall(function() -- This is the PCall to prevent Fallback.
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/SkunkPlatform-Team/ClientCommands/refs/heads/main/Main.txt"))() -- Evacuate with loadstring.
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/SkunkPlatform-Team/ClientCommands/refs/heads/main/Main.txt"))() -- Evaluate with loadstring.
 end)
 
 if not success then
