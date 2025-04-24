@@ -13,12 +13,12 @@ To Evaluate with your Client Side Executor, Follow the steps:
 3. Use the Example Usage:
 ```lua
 print()
-local success, result = pcall(function() // This is the PCall to prevent Fallback.
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/SkunkPlatform-Team/ClientCommands/refs/heads/main/Main.txt"))() // Evacuate with loadstring.
+local success, result = pcall(function() -- This is the PCall to prevent Fallback.
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/SkunkPlatform-Team/ClientCommands/refs/heads/main/Main.txt"))() -- Evacuate with loadstring.
 end)
 
 if not success then
-    warn("Error loading script: " .. result) // This it will show a Fallback Error.
+    warn("Error loading script: " .. result) -- This will show a Fallback Error.
 end
 ```
 4. Inject the Roblox Game to read example.
